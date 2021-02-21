@@ -318,7 +318,7 @@ fraction and a unit suffix, such as "300ms", "-1.5h" or "2h45m". Valid
 time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
 
 Options which use SIZE use kByte by default.  However, a suffix of `b`
-for bytes, `k` for kBytes, `M` for MBytes, `G` for GBytes, `T` for
+for bytes, `k` for kBytes, `M` for, `G` for GBytes, `T` for
 TBytes and `P` for PBytes may be used.  These are the binary units, e.g.
 1, 2\*\*10, 2\*\*20, 2\*\*30 respectively.
 
@@ -363,7 +363,7 @@ This option controls the bandwidth limit. For example
 
     --bwlimit 10M
     
-would mean limit the upload and download bandwidth to 10 Mbyte/s.
+would mean limit the upload and download bandwidth to 10 MByte/s.
 **NB** this is **bytes** per second not **bits** per second. To use a
 single limit, specify the desired bandwidth in kBytes/s, or use a
 suffix b|k|M|G. The default is `0` which means to not limit bandwidth.
@@ -373,7 +373,7 @@ The upload and download bandwidth can be specified seperately, as
 
     --bwlimit 10M:100k
 
-would mean limit the upload bandwidth to 10 Mbyte/s and the download
+would mean limit the upload bandwidth to 10 MByte/s and the download
 bandwidth to 100 kByte/s. Either limit can be "off" meaning no limit, so
 to just limit the upload bandwidth you would use
 
@@ -402,7 +402,7 @@ working hours could be:
 `--bwlimit "08:00,512k 12:00,10M 13:00,512k 18:00,30M 23:00,off"`
 
 In this example, the transfer bandwidth will be set to 512kBytes/sec
-at 8am every day. At noon, it will rise to 10Mbytes/s, and drop back
+at 8am every day. At noon, it will rise to 10MBytes/s, and drop back
 to 512kBytes/sec at 1pm. At 6pm, the bandwidth limit will be set to
 30MBytes/s, and at 11pm it will be completely disabled (full speed).
 Anything between 11pm and 8am will remain unlimited.
@@ -412,8 +412,8 @@ An example of timetable with `WEEKDAY` could be:
 `--bwlimit "Mon-00:00,512 Fri-23:59,10M Sat-10:00,1M Sun-20:00,off"`
 
 It means that, the transfer bandwidth will be set to 512kBytes/sec on
-Monday. It will rise to 10Mbytes/s before the end of Friday. At 10:00
-on Saturday it will be set to 1Mbyte/s. From 20:00 on Sunday it will
+Monday. It will rise to 10MBytes/s before the end of Friday. At 10:00
+on Saturday it will be set to 1MByte/s. From 20:00 on Sunday it will
 be unlimited.
 
 Timeslots without `WEEKDAY` are extended to the whole week. So this
@@ -1046,7 +1046,7 @@ systems will then recompose the unicode, resulting in duplicate files if
 the data is ever copied back to a local filesystem.
 
 Using this flag will disable that functionality, treating each unicode
-character as unique. For example, by default é and é will be normalized
+character as unique. For example, by default é and é will be normalized
 into the same character. With `--no-unicode-normalization` they will be
 treated as unique characters.
 
